@@ -21,10 +21,10 @@ public class BaseParpare {
 	protected SeleniumUtil seleniumUtil = null;
 	// 添加成员变量来获取beforeClass传入的context参数
 	protected ITestContext testContext = null;
-	protected String webUrl="";
-	protected int timeOut = 0;
-	protected int sleepTime = 0;
-	protected int waitMillisecondsForAlert = 0;
+	protected String webUrl="http://127.0.0.1:1080/WebTours/";
+	protected int timeOut = 15;
+	protected int sleepTime = 800;
+	protected int waitMillisecondsForAlert = 40000;
 
 
 	@BeforeClass
@@ -36,10 +36,10 @@ public class BaseParpare {
 		this.testContext = context;
 		//从testng.xml文件中获取浏览器的属性值
 		String browserName = context.getCurrentXmlTest().getParameter("browserName");
-		timeOut = Integer.valueOf(context.getCurrentXmlTest().getParameter("timeOut"));
-		sleepTime = Integer.valueOf(context.getCurrentXmlTest().getParameter("sleepTime"));
-		waitMillisecondsForAlert = Integer.valueOf(context.getCurrentXmlTest().getParameter("waitMillisecondsForAlert"));
-		webUrl = context.getCurrentXmlTest().getParameter("testurl");
+//		timeOut = Integer.valueOf(context.getCurrentXmlTest().getParameter("timeOut"));
+//		sleepTime = Integer.valueOf(context.getCurrentXmlTest().getParameter("sleepTime"));
+//		waitMillisecondsForAlert = Integer.valueOf(context.getCurrentXmlTest().getParameter("waitMillisecondsForAlert"));
+//		webUrl = context.getCurrentXmlTest().getParameter("testurl");
 		
 
 		try {

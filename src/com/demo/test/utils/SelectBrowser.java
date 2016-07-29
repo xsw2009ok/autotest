@@ -26,12 +26,21 @@ public class SelectBrowser {
 		//从testNG的配置文件读取参数driverConfgFilePath的值
 		String driverConfgFilePath = context.getCurrentXmlTest().getParameter("driverConfgFilePath");
 		/** 声明好驱动的路径 */
-		String chromedriver_win = PropertiesDataProvider.getTestData(driverConfgFilePath, "chromedriver_win");
-		String chromedriver_linux = PropertiesDataProvider.getTestData(driverConfgFilePath, "chromedriver_linux");
-		String chromedriver_mac = PropertiesDataProvider.getTestData(driverConfgFilePath, "chromedriver_mac");
-		String ghostdriver_win = PropertiesDataProvider.getTestData(driverConfgFilePath, "ghostdriver_win");
-		String iedriver = PropertiesDataProvider.getTestData(driverConfgFilePath, "iedriver");
-		if (currentPlatform.toLowerCase().contains("win")) { //如果是windows平台
+//		String chromedriver_win = PropertiesDataProvider.getTestData(driverConfgFilePath, "chromedriver_win");		
+//		String chromedriver_linux = PropertiesDataProvider.getTestData(driverConfgFilePath, "chromedriver_linux");
+//		String chromedriver_mac = PropertiesDataProvider.getTestData(driverConfgFilePath, "chromedriver_mac");
+//		String ghostdriver_win = PropertiesDataProvider.getTestData(driverConfgFilePath, "ghostdriver_win");
+//		String iedriver = PropertiesDataProvider.getTestData(driverConfgFilePath, "iedriver");
+		
+		
+		
+		String chromedriver_win = "res/driver/chrome/win/chromedriver.exe";
+		String chromedriver_linux = "res/driver/chrome/linux/chromedriver";
+		String chromedriver_mac = "res/driver/chrome/mac/chromedriver";
+		String ghostdriver_win = "res/driver/ghostdriver/phantomjs.exe";
+		String iedriver = "res/driver/ie/iedriver.exe";
+		
+		if (currentPlatform.toLowerCase().contains("win") || currentPlatform.toLowerCase().contains("Windows 7")) { //如果是windows平台
 
 			if (browser.equalsIgnoreCase("ie")) {
 				System.setProperty("webdriver.ie.driver", iedriver);
